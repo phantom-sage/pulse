@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\PharmacyController;
+use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +24,15 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::resource('pharmacies', PharmacyController::class);
+Route::resource('medicines', MedicineController::class);
+Route::resource('companies', CompanyController::class);
+Route::resource('locations', LocationController::class);
+
+Route::view('contact-us', 'contact_us.contact-us')->middleware('auth:web')
+->name('contact.us');
+
+Route::post('send-email', function (\Illuminate\Http\Request $request) {
+    return $request->all();
+})->name('send.email');

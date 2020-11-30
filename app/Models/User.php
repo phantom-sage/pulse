@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phonenumber',
     ];
 
     /**
@@ -57,4 +57,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function role()
+    {
+        return $this->hasOne('App\Models\Role');
+    }
+
+    public function pharmacies()
+    {
+        return $this->hasMany('App\Models\Pharmacy');
+    }
 }
