@@ -1422,16 +1422,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "9b8cc455eadee5330d849bb3e41dc5931ccbe8ee"
+                "reference": "331bd6572610b06ad6dd6b2a7c15a0465a3ca9c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/9b8cc455eadee5330d849bb3e41dc5931ccbe8ee",
-                "reference": "9b8cc455eadee5330d849bb3e41dc5931ccbe8ee",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/331bd6572610b06ad6dd6b2a7c15a0465a3ca9c9",
+                "reference": "331bd6572610b06ad6dd6b2a7c15a0465a3ca9c9",
                 "shasum": ""
             },
             "require": {
@@ -1482,7 +1482,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2020-11-17T16:45:56+00:00"
+            "time": "2020-11-24T17:31:19+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1805,23 +1805,23 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.3.2",
+            "version": "v2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "8aa271bc3af74d8fea8480b372ecaa0d5ae3f6d2"
+                "reference": "781a1250dc8eab9121fd856ff0b6efca8c32756f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/8aa271bc3af74d8fea8480b372ecaa0d5ae3f6d2",
-                "reference": "8aa271bc3af74d8fea8480b372ecaa0d5ae3f6d2",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/781a1250dc8eab9121fd856ff0b6efca8c32756f",
+                "reference": "781a1250dc8eab9121fd856ff0b6efca8c32756f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/database": "^7.0|^8.0",
                 "illuminate/support": "^7.0|^8.0",
                 "illuminate/validation": "^7.0|^8.0",
-                "php": "^7.2.5",
+                "php": "^7.2.5|^8.0",
                 "symfony/http-kernel": "^5.0"
             },
             "require-dev": {
@@ -1865,7 +1865,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v2.3.2"
+                "source": "https://github.com/livewire/livewire/tree/v2.3.5"
             },
             "funding": [
                 {
@@ -1873,7 +1873,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-17T14:58:56+00:00"
+            "time": "2020-12-01T20:51:29+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

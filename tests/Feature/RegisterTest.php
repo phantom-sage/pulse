@@ -15,13 +15,15 @@ class RegisterTest extends TestCase
 
     public function testRegister()
     {
+        $this->withoutExceptionHandling();
+
         $this->post(route('register'), [
             'name' => $this->faker->name,
             'email' => $this->faker->safeEmail,
             'password' => 'password',
             'password_confirmation' => 'password',
-            'phonenumber' => '0123456789',
         ])->assertRedirect(route('dashboard'));
+
         $this->assertEquals(Role::first()->user_id, User::first()->id);
     }
 }

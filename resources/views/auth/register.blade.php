@@ -15,11 +15,6 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="phonenumber" value="{{ __('Phone number') }}" />
-                <x-jet-input id="phonenumber" class="block mt-1 w-full" type="number" name="phonenumber" :value="old('phonenumber')" required />
-            </div>
-
-            <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>

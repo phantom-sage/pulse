@@ -34,6 +34,8 @@ class MedicineControllerTest extends TestCase
 
     public function testCreate()
     {
+        $this->withoutExceptionHandling();
+
         $this->actingAs($this->user)->get(route('medicines.create'))->assertOk();
         $this->assertEquals(0, Medicine::count());
     }
