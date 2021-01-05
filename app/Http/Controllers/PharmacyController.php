@@ -47,12 +47,11 @@ class PharmacyController extends Controller
         $validPharmacyData = $request->validate([
             'name' => ['string', 'required', 'min:3', 'max:255'],
             'location_id' => ['required', 'min:1', 'integer'],
-            'user_id' => ['required', 'min:1', 'integer'],
         ]);
 
         $pharmacy = new Pharmacy();
         $pharmacy->name = $validPharmacyData['name'];
-        $pharmacy->user_id = $validPharmacyData['user_id'];
+        $pharmacy->user_id = Auth::user()->id;
         $pharmacy->save();
         $pharmacy->refresh();
 

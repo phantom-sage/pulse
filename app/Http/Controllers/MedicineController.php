@@ -11,7 +11,9 @@ class MedicineController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except([
+            'show_medicine_in_map',
+        ]);
     }
 
     /**
@@ -76,6 +78,19 @@ class MedicineController extends Controller
     public function show(Medicine $medicine)
     {
         return $medicine;
+    }
+
+    /**
+     * Show medicine in the map.
+     *
+     * @param Medicine $medicine
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function show_medicine_in_map(Medicine $medicine)
+    {
+        return view('medicine.show-medicine-in-map', [
+            'medicine' => $medicine,
+        ]);
     }
 
     /**

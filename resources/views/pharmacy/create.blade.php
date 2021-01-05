@@ -19,22 +19,11 @@
                 </div>
 
                 <div class="flex flex-wrap my-3">
+                    <label for="name" class="w-full">Pharmacy location:</label>
                     <select name="location_id" class="border rounded p-2 w-full">
                         @php $locations = \App\Models\Location::all() @endphp
                         @foreach($locations as $location)
                             <option value="{{ $location->id }}">{{ $location->address }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-
-                @php
-                $users = \App\Models\User::all();
-                @endphp
-                <div class="flex flex-wrap my-3">
-                    <select name="user_id" class="border rounded p-2 w-full">
-                        @foreach($users as $user)
-                            <option value="{{ $user->id }}">{{ $user->name }}</option>
                         @endforeach
                     </select>
                 </div>

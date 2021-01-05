@@ -2,15 +2,18 @@
 
 namespace Tests\Feature;
 
+use App\Models\Company;
 use App\Models\Medicine;
+use App\Models\Pharmacy;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Support\Str;
 
 class MedicineControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, WithFaker;
 
     /**
      * @var \App\Models\User $user
@@ -38,6 +41,28 @@ class MedicineControllerTest extends TestCase
 
         $this->actingAs($this->user)->get(route('medicines.create'))->assertOk();
         $this->assertEquals(0, Medicine::count());
+    }
+
+
+    public function testStore()
+    {
+        $this->withoutExceptionHandling();
+
+        Pharmacy::factory()->create();
+        Company::factory()->create();
+
+        $this->actingAs($this->user)
+            ->post(route('medicines.store'), [
+                'trade_name' => $this->faker->name,
+                'scientist_name' => $this->faker->name,
+                'amount' => $this->faker->randomDigit,
+                'weight' => $this->faker->randomDigit,
+                'status' => 'Available',
+                'pharmacy_id' => Pharmacy::first()->id,
+                'company_id' => Company::first()->id,
+            ])
+            ->assertRedirect(route('dashboard'))
+            ->assertStatus(302);
     }
 
     public function testShow()

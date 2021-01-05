@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -27,6 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::resource('pharmacies', PharmacyController::class);
 Route::resource('medicines', MedicineController::class);
+Route::get('medicines/{medicine}/show-medicine-in-map/', [MedicineController::class, 'show_medicine_in_map'])
+    ->name('medicines.show.medicine.in.map');
 Route::resource('companies', CompanyController::class);
 Route::resource('locations', LocationController::class);
 

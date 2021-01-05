@@ -5,6 +5,7 @@
 
     <div class="max-w-3xl mx-auto">
         <div class="container mx-auto">
+            {{ $errors }}
             <form enctype="multipart/form-data" method="POST" action="{{ route('medicines.store') }}">
                 @csrf
 
@@ -53,7 +54,7 @@
                 $companies = \App\Models\Company::all();
                 @endphp
                 <div class="flex flex-wrap my-3">
-                    <label for="company">Pharmacy:</label>
+                    <label for="company">Company:</label>
                     <select id="company" name="company_id" class="w-full rounded border p-2">
                         @foreach($companies as $company)
                             <option value="{{ $company->id }}">{{ $company->name }}</option>

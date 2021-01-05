@@ -2,6 +2,8 @@
 
 namespace Tests\Browser;
 
+use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
@@ -9,6 +11,12 @@ use Tests\DuskTestCase;
 class WelcomeTest extends DuskTestCase
 {
     use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        User::factory()->create();
+    }
 
     /**
      * A basic browser test example.

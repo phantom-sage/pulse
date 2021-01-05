@@ -49,7 +49,6 @@ class PharmacyControllerTest extends TestCase
         $this->actingAs($this->user)->post(route('pharmacies.store'), [
             'name' => Str::random(8),
             'location_id' => Location::first()->id,
-            'user_id' => $this->user->id,
         ])->assertRedirect(route('dashboard'));
     }
 

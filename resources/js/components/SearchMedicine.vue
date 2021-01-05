@@ -40,7 +40,8 @@
                     <div class="divide-y bg-black my-2"></div>
                     <p>
                         <strong>Location:</strong>
-                        <a class="px-3 py-1 bg-green-600 text-white rounded font-bold text-lg" href="#">Show in map</a>
+                        <a class="px-3 py-1 bg-green-600 text-white rounded font-bold text-lg"
+                           :href="showMedicineInTheMapUrl(medicine.id)">Show in map</a>
                     </p>
                 </div>
             </div>
@@ -63,6 +64,9 @@ export default {
         }
     },
     methods: {
+        showMedicineInTheMapUrl(id) {
+            return `/medicines/${id}/show-medicine-in-map/`;
+        },
         fetchMedicines() {
         console.log(`${this.medicineSearchType}`)
             axios.post(`/api/medicine/all`, {
